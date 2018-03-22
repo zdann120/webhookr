@@ -1,0 +1,13 @@
+= simple_form_for(data_set) do |f|
+  - if data_set.errors.any?
+    #error_explanation
+      h2
+        = pluralize(data_set.errors.count, "error")
+        |  prohibited this data_set from being saved:
+      ul
+        - data_set.errors.full_messages.each do |message|
+          li
+            = message
+  = f.input :name
+  = f.input :description
+  = f.submit class: 'btn btn-primary'
