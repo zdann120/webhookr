@@ -1,3 +1,7 @@
 h1 = @data_set.name
 p.lead = @data_set.description
 hr
+p
+  | Your incoming hook URL is:<br>
+  code
+    = incoming_hook_data_sets_url(@data_set.uid)

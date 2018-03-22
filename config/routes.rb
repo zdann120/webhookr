@@ -1,7 +1,10 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  resources :data_sets
+  resources :data_sets do
+    post '/incoming/:uid', to: 'data_sets/incoming_requests#create', on: :collection,
+        only: :create, as: 'incoming_hook'
+  end
   namespace :admin do
       resources :users
       resources :announcements
