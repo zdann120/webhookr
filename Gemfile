@@ -79,3 +79,4 @@ gem 'omniauth-github', '~> 1.3'
 gem 'whenever', require: false
 gem 'slim-rails'
 gem 'simple_form'
+gem 'ulid'

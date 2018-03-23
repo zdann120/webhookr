@@ -1,5 +1,6 @@
 class DataSets::IncomingRequestsController < ApplicationController
   skip_before_action :verify_authenticity_token
+  before_action :authenticate_user!, only: [:show]
   def create
     body = request.body.read
     payload = JSON.parse body
