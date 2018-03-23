@@ -16,4 +16,5 @@
 //= require bootstrap
 //= require activestorage
 //= require turbolinks
+//= require jquery.json-viewer/json-viewer/jquery.json-viewer.js
 //= require_tree .

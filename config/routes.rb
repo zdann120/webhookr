@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :data_sets do
     post '/incoming/:uid', to: 'data_sets/incoming_requests#create', on: :collection,
         only: :create, as: 'incoming_hook'
+    get 'request/:uid', on: :member, to: 'data_sets/incoming_requests#show', as: 'view_hook'
   end
   namespace :admin do
       resources :users

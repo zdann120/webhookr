@@ -2,29 +2,18 @@ p#notice
   = notice
 h1
   | Data Sets
-table
+table.table
   thead
     tr
       th
         | Name
-      th
-        | Uid
-      th
-        | User
-      th
-        | Description
       th[colspan="3"]
   tbody
     - @data_sets.each do |data_set|
       tr
         td
           = data_set.name
-        td
-          = data_set.uid
-        td
-          = data_set.user
-        td
-          = data_set.description
+
         td
           = link_to 'Show', data_set
         td

@@ -7,6 +7,7 @@
 @import "bootstrap";
 @import "sticky-footer";
 @import "announcements";
+@import "jquery.json-viewer/json-viewer/jquery.json-viewer.css";
 
 // Fixes bootstrap nav-brand container overlap
 @include media-breakpoint-down(xs) {

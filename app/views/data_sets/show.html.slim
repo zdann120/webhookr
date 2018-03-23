@@ -5,3 +5,16 @@ p
   | Your incoming hook URL is:<br>
   code
     = incoming_hook_data_sets_url(@data_set.uid)
+hr
+table.table.table-bordered.table-hover.table-striped
+  thead
+    tr
+      th Timestamp
+      th Payload
+  tbody
+    - @data_set.incoming_requests.each do |req|
+      tr
+        td
+          = req.created_at
+        td
+          code = link_to "view", view_hook_data_set_path(@data_set.id, req.uid)

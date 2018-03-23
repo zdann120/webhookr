@@ -11,4 +11,8 @@ class DataSets::IncomingRequestsController < ApplicationController
       render json: { result: 'error' }, status: 500
     end
   end
+
+  def show
+    @incoming_request = IncomingRequest.find_by_uid(params[:uid])
+  end
 end
