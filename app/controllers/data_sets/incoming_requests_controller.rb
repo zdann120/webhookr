@@ -7,7 +7,7 @@ class DataSets::IncomingRequestsController < ApplicationController
     data_set = DataSet.find_by_uid(params[:uid])
     incoming_request = data_set.incoming_requests.new(payload: payload)
     if incoming_request.save
-      render json: { result: 'success' }, status: 200
+      render json: { result: 'success', uid: incoming_request.uid }, status: 200
     else
       render json: { result: 'error' }, status: 500
     end
